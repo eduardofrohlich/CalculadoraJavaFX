@@ -49,7 +49,11 @@ public class FXMLDocumentController implements Initializable {
             case "-":
             case "*":
             case "/":
+                
                 if (!operator.equals("")) {
+                    if (lblResult.getText().isEmpty()) {
+                    return;
+                }
                     calculate(null);
                     if (error) {
                         return;
