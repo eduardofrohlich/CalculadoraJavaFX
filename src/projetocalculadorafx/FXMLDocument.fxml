@@ -10,7 +10,7 @@
 
 <AnchorPane id="AnchorPane" prefHeight="362.0" prefWidth="269.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projetocalculadorafx.FXMLDocumentController">
     <children>
-        <Label fx:id="lblResult" alignment="CENTER" contentDisplay="CENTER" layoutX="21.0" layoutY="14.0" minHeight="16" minWidth="69" prefHeight="85.0" prefWidth="299.0" style="-fx-border-color: #000000;">
+        <Label fx:id="lblResult" alignment="CENTER" contentDisplay="CENTER" layoutX="21.0" layoutY="59.0" minHeight="16" minWidth="69" prefHeight="77.0" prefWidth="299.0" style="-fx-border-color: #000000;">
          <font>
             <Font size="22.0" />
          </font></Label>
@@ -127,7 +127,7 @@
             </Button>
          </children>
       </HBox>
-      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="198.0" layoutY="281.0" mnemonicParsing="false" onAction="#operatorCalc" prefWidth="50.0" style="-fx-background-color: #96d7eb;" text="=">
+      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="198.0" layoutY="281.0" mnemonicParsing="false" onAction="#calculate" prefWidth="50.0" style="-fx-background-color: #96d7eb;" text="=">
          <font>
             <Font size="18.0" />
          </font>
@@ -142,5 +142,6 @@
             <Font size="18.0" />
          </font>
       </Button>
+      <Label fx:id="lblOperation" layoutX="21.0" layoutY="14.0" prefHeight="43.0" prefWidth="299.0" wrapText="true" />
     </children>
 </AnchorPane>
