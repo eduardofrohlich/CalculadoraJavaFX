@@ -4,9 +4,9 @@ Este é um projeto de calculadora em JavaFX para o Projeto de Extensão "UFPR Fa
 
 ## Tecnologias Utilizadas
 
-    - Java 8
+    - JDK 17
     - NetBeans versão 17
-    - Java Scene Builder 2
+    - Java Scene Builder 2.0
 
 ## Funcionalidades
 
