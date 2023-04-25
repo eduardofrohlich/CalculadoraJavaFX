@@ -17,7 +17,7 @@ public class FXMLDocumentController implements Initializable {
     private Label lblResult;
     private double num1=0,num2=0,answer=0;
     private String operator = "";
-    private boolean error;
+    private boolean error = false;
     private String operation = "";
 
     @FXML
@@ -40,24 +40,16 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private void operatorCalc(ActionEvent event) {
         String value = ((Button)event.getSource()).getText();
-        if (lblResult.getText().equals("ERROR")) {
+        if (error) {
             return;
         }
-
         switch (value) {
-            case "+":
-            case "-":
-            case "*":
-            case "/":
-                
+            case "+", "-", "*", "/" -> {
                 if (!operator.equals("")) {
                     if (lblResult.getText().isEmpty()) {
-                    return;
-                }
-                    calculate(null);
-                    if (error) {
                         return;
                     }
+                    calculate(null);
                     num1 = answer;
                 } else {
                     num1 = Double.parseDouble(lblResult.getText());
@@ -65,23 +57,21 @@ public class FXMLDocumentController implements Initializable {
                 operator = value;
                 lblResult.setText("");
                 operation += " " + value + " ";
-                break;
-
-            case ".":
+            }
+            case "." -> {
                 if (!lblResult.getText().contains(".")) {
                     lblResult.setText(lblResult.getText() + ".");
                     operation += ".";
                 }
-                break;
-
-            case "(-)":
+            }
+            case "(-)" -> {
                 if (!error) {
                     double temp = Double.parseDouble(lblResult.getText());
                     temp *= -1;
                     lblResult.setText(String.valueOf(temp));
                     operation += "(-" + 1 + ")";
                 }
-                break;
+            }
         }
         lblOperation.setText(operation);
     }
